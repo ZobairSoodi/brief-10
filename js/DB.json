@@ -1,0 +1,181 @@
+[
+    {
+        "id": 1,
+        "label": "milk",
+        "price": 3,
+        "category": "food",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 2,
+        "label": "bread",
+        "price": 2,
+        "category": "food",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 3,
+        "label": "eggs",
+        "price": 1,
+        "category": "food",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 4,
+        "label": "jeans",
+        "price": 100,
+        "category": "clothing",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 5,
+        "label": "shirt",
+        "price": 90,
+        "category": "clothing",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 6,
+        "label": "socks",
+        "price": 10,
+        "category": "clothing",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 7,
+        "label": "T-shirt",
+        "price": 110,
+        "category": "clothing",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 8,
+        "label": "dress",
+        "price": 150,
+        "category": "clothing",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 9,
+        "label": "Necklace",
+        "price": 50,
+        "category": "accessories",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 10,
+        "label": "earring",
+        "price": 60,
+        "category": "accessories",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 11,
+        "label": "hair band",
+        "price": 20,
+        "category": "accessories",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 12,
+        "label": "ring",
+        "price": 90,
+        "category": "accessories",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 13,
+        "label": "gloves",
+        "price": 30,
+        "category": "accessories",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 14,
+        "label": "lipstick",
+        "price": 20,
+        "category": "beauty",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 15,
+        "label": "nail polish",
+        "price": 15,
+        "category": "beauty",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 16,
+        "label": "powder",
+        "price": 20,
+        "category": "beauty",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 17,
+        "label": "facial foam",
+        "price": 20,
+        "category": "beauty",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 18,
+        "label": "butter",
+        "price": 10,
+        "category": "food",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 19,
+        "label": "toast",
+        "price": 5,
+        "category": "food",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    },
+
+    {
+        "id": 20,
+        "label": "sugar",
+        "price": 10,
+        "category": "food",
+        "availablity": ["tangier","fes"],
+        "provider": {"RS":"LKS", "address": "adrs1"}
+    }
+]
