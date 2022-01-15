@@ -24,9 +24,13 @@
             document.body.appendChild(pag_div)
         }
         var temp = list.slice(l_start,l_end);
+        var ul = document.createElement("ul")
         temp.forEach(el => {
-            console.log(el)
+            var li = document.createElement("li");
+            li.innerHTML = el;
+            ul.appendChild(li);
         });
+        document.body.appendChild(ul);
     </script>
 </body>
 </html>
