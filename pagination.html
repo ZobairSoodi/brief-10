@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var list = ["ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok",]
+        console.log(list.length%4);
+        var ul = document.createElement("ul")
+        for(var i = 0; i < list.length; i++){
+            i+=4;
+            var li = document.createElement("li")
+            li.innerHTML = i;
+            ul.appendChild(li);
+            document.body.appendChild(ul)
+        }
+
+    </script>
+</body>
+</html>

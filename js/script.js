@@ -1,4 +1,5 @@
 var res;
+var search_input = document.getElementById("search");
 
 ///////////// get data from json file /////////////
 /////////////// and store it in res ///////////////
@@ -8,13 +9,14 @@ function getData(){
             url: "js/DB.json",
             success: function(data){
                 res = data;
-                fill()
+                fill(res)
             }
         }
     )
 }
 getData();
 ///////////////////////////////////////////////////
+
 
 
 ///////////// Sort by Label/Category//////////////
@@ -27,9 +29,10 @@ function sort_T(e, direction){
         res.reverse();
     }
     $("tbody").html("");
-    fill();
+    fill(res);
 }
 ///////////////////////////////////////////////////
+
 
 
 ///////////////// Sort by Id/Price/////////////////
@@ -42,14 +45,15 @@ function sort_T_num(e, direction){
         res.reverse();
     }
     $("tbody").html("");
-    fill();
+    fill(res);
 }
 ///////////////////////////////////////////////////
 
 
+
 //////////// Fill table with json data ////////////
-function fill(){
-    res.forEach(el => {
+function fill(result){
+    result.forEach(el => {
         var ul = document.createElement("ul");
         el.availablity.forEach(av => {
             var li = document.createElement("li");
@@ -70,3 +74,16 @@ function fill(){
     })
 }
 ///////////////////////////////////////////////////
+
+
+search_input.addEventListener("keyup", function(){
+    var temp = [];
+    res.forEach(el => {
+        var inp = search_input.value.trim();
+        if((el.label.indexOf(inp)!=-1)||(el.category.indexOf(inp)!=-1)||(el.id == inp)||(el.price == inp)){
+            temp.push(el);
+        }
+    });
+    $("tbody").html("");
+    fill(temp)
+})
