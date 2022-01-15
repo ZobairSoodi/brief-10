@@ -9,17 +9,24 @@
 <body>
     
     <script>
-        var list = ["ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok","ok",]
-        console.log(list.length%4);
-        var ul = document.createElement("ul")
-        for(var i = 0; i < list.length; i++){
-            i+=4;
-            var li = document.createElement("li")
-            li.innerHTML = i;
-            ul.appendChild(li);
-            document.body.appendChild(ul)
+        var list = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19"]
+        var l_len = list.length;
+        var num_pages = Math.ceil(l_len/5);
+        var curr_page = 1;
+        var l_start = (curr_page-1) * 5
+        var l_end = l_start + 5;
+        var pag_div = document.createElement("div")
+        for(var i = 1; i <= num_pages; i++){
+            // var pag_btn = document.createElement("button")
+            // pag_btn.innerHTML = i;
+            pag_div.innerHTML += `<input type="button" value="${i}" onclick="ekn(this)">`
+            // pag_div.appendChild(pag_btn);
+            document.body.appendChild(pag_div)
         }
-
+        var temp = list.slice(l_start,l_end);
+        temp.forEach(el => {
+            console.log(el)
+        });
     </script>
 </body>
 </html>
