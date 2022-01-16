@@ -1,5 +1,8 @@
 var res;
+var temp = [];
+var current_page = 1;
 var search_input = document.getElementById("search");
+var pag_div = document.getElementById("pag");
 
 ///////////// get data from json file /////////////
 /////////////// and store it in res ///////////////
@@ -9,7 +12,8 @@ function getData(){
             url: "js/DB.json",
             success: function(data){
                 res = data;
-                fill(res)
+                add_pag_btn(res)
+                pag_btn(current_page);
             }
         }
     )
@@ -28,8 +32,7 @@ function sort_T(e, direction){
     if(direction == "desc"){
         res.reverse();
     }
-    $("tbody").html("");
-    fill(res);
+    pag_btn(current_page);
 }
 ///////////////////////////////////////////////////
 
@@ -44,8 +47,7 @@ function sort_T_num(e, direction){
     if(direction == "desc"){
         res.reverse();
     }
-    $("tbody").html("");
-    fill(res);
+    pag_btn(current_page);
 }
 ///////////////////////////////////////////////////
 
@@ -76,6 +78,8 @@ function fill(result){
 ///////////////////////////////////////////////////
 
 
+
+/////////// search by **!!EVERYTHING!!** //////////
 search_input.addEventListener("keyup", function(){
     var temp = [];
     res.forEach(el => {
@@ -84,6 +88,29 @@ search_input.addEventListener("keyup", function(){
             temp.push(el);
         }
     });
-    $("tbody").html("");
-    fill(temp)
+    pag_btn(current_page);
 })
+///////////////////////////////////////////////////
+
+
+
+/////////// add the pagination buttons ////////////
+function add_pag_btn(r){
+    var num_of_pages = Math.ceil(r.length/5);
+    for(var i = 1; i <= num_of_pages; i++){
+        pag_div.innerHTML += `<input type="button" value="${i}" onclick="pag_btn(this.value)">`
+    }
+}
+///////////////////////////////////////////////////
+
+
+
+////////////// !!EPIC PAGINATION!! ////////////////
+function pag_btn(e){
+    var start = (Number(e)-1)*5;
+    temp = res.slice(start, start + 5);
+    current_page = Number(e);
+    $("tbody").html("");
+    fill(temp);
+}
+///////////////////////////////////////////////////
