@@ -26,11 +26,15 @@ getData();
 ///////////// Sort by Label/Category//////////////
 function sort_T(e, direction){
     var sort_var = e.parentElement.innerText.trim(); 
-    res.sort(function(a,b){
-        if(a[sort_var].toUpperCase() < b[sort_var].toUpperCase())return -1
-    })
     if(direction == "desc"){
-        res.reverse();
+        res.sort(function(a,b){
+            if(a[sort_var].toUpperCase() > b[sort_var].toUpperCase())return -1
+        })
+    }
+    else{
+        res.sort(function(a,b){
+            if(a[sort_var].toUpperCase() < b[sort_var].toUpperCase())return -1
+        })
     }
     pag_btn(current_page);
 }
@@ -41,11 +45,15 @@ function sort_T(e, direction){
 ///////////////// Sort by Id/Price/////////////////
 function sort_T_num(e, direction){
     var sort_var = e.parentElement.innerText.trim();
-    res.sort(function(a,b){
-        return a[sort_var] - b[sort_var]
-    })
     if(direction == "desc"){
-        res.reverse();
+        res.sort(function(a,b){
+            return a[sort_var] - b[sort_var]
+        })
+    }
+    else{
+        res.sort(function(a,b){
+            return b[sort_var] - a[sort_var]
+        })
     }
     pag_btn(current_page);
 }
@@ -126,3 +134,34 @@ function pag_btn(e){
     fill(temp);
 }
 ///////////////////////////////////////////////////
+
+var nav = document.getElementById("nav_body");
+var menu_btn = document.getElementById("menu_btn");
+var media_query = window.matchMedia("(max-width:700px)");
+var is_active = false;
+menu_btn.addEventListener("click",function(){
+    
+    if(nav.style.display == "none" || nav.style.display == ""){
+        nav.style.display = "flex";
+        is_active = true;
+    }
+    else{
+        nav.style.display = "none";
+        is_active = false;
+    }
+})
+
+window.addEventListener("resize", function(){
+    if(window.innerWidth<700){
+        if(is_active){
+            nav.style.display = "flex";
+        }
+        else{
+            nav.style.display = "none";
+        }
+    }
+    else{
+        nav.style.display = "flex";
+    }
+
+})
