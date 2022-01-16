@@ -81,14 +81,18 @@ function fill(result){
 
 /////////// search by **!!EVERYTHING!!** //////////
 search_input.addEventListener("keyup", function(){
-    var temp = [];
+    var temp2 = [];
     res.forEach(el => {
         var inp = search_input.value.trim();
         if((el.label.indexOf(inp)!=-1)||(el.category.indexOf(inp)!=-1)||(el.id == inp)||(el.price == inp)){
-            temp.push(el);
+            temp2.push(el);
         }
     });
-    pag_btn(current_page);
+    
+    $("tbody").html("");
+    add_pag_btn(temp2);
+    temp2 = temp2.slice(0, 5);
+    fill(temp2);
 })
 ///////////////////////////////////////////////////
 
@@ -97,6 +101,7 @@ search_input.addEventListener("keyup", function(){
 /////////// add the pagination buttons ////////////
 function add_pag_btn(r){
     var num_of_pages = Math.ceil(r.length/5);
+    pag_div.innerHTML = "";
     for(var i = 1; i <= num_of_pages; i++){
         pag_div.innerHTML += `<input type="button" value="${i}" onclick="pag_btn(this.value)">`
     }
@@ -107,8 +112,15 @@ function add_pag_btn(r){
 
 ////////////// !!EPIC PAGINATION!! ////////////////
 function pag_btn(e){
+    var temp2 = []
+    res.forEach(el => {
+        var inp = search_input.value.trim();
+        if((el.label.indexOf(inp)!=-1)||(el.category.indexOf(inp)!=-1)||(el.id == inp)||(el.price == inp)){
+            temp2.push(el);
+        }
+    });
     var start = (Number(e)-1)*5;
-    temp = res.slice(start, start + 5);
+    temp = temp2.slice(start, start + 5);
     current_page = Number(e);
     $("tbody").html("");
     fill(temp);
