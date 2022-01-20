@@ -88,7 +88,7 @@ function fill(result){
 
 
 /////////// search by **!!EVERYTHING!!** //////////
-search_input.addEventListener("keyup", function(){
+$("#search").on("keyup", function(){
     var temp2 = [];
     res.forEach(el => {
         var inp = search_input.value.trim();
