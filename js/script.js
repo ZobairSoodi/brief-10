@@ -6,26 +6,27 @@ var pag_div = document.getElementById("pag");
 
 ///////////// get data from json file /////////////
 /////////////// and store it in res ///////////////
-function getData(){
-    $.ajax(
-        {
-            url: "js/DB.json",
-            success: function(data){
-                res = data;
-                add_pag_btn(res)
-                pag_btn(current_page);
+(
+    function getData(){
+        $.ajax(
+            {
+                url: "js/DB.json",
+                success: function(data){
+                    res = data;
+                    add_pag_btn(res)
+                    pag_btn(current_page);
+                }
             }
-        }
-    )
-}
-getData();
+        )
+    }
+)();
 ///////////////////////////////////////////////////
 
 
 
 ///////////// Sort by Label/Category//////////////
 function sort_T(e, direction){
-    var sort_var = e.parentElement.innerText.trim(); 
+    var sort_var = e.parentElement.innerText.trim();
     if(direction == "desc"){
         res.sort(function(a,b){
             if(a[sort_var].toUpperCase() > b[sort_var].toUpperCase())return -1
@@ -69,7 +70,7 @@ function fill(result){
             var li = document.createElement("li");
             li.innerHTML = av;
             ul.appendChild(li);
-        })
+        });
         $("tbody").append(`<tr>
             <td>${el.id}</td>
             <td>${el.label}</td>
