@@ -97,7 +97,6 @@ $("#search").on("keyup", function(){
             temp2.push(el);
         }
     });
-    
     $("tbody").html("");
     add_pag_btn(temp2);
     temp2 = temp2.slice(0, 5);
